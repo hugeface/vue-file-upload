@@ -1,5 +1,10 @@
 # Upload - 断点续传组件
 
+vue-file-upload powered by
+[vue-simple-upload](https://github.com/pseudo-god/vue-simple-upload)
+
+想说这个小哥的代码还是很好的，但不知道为什么在它的程序中有一些令人匪夷所思的错误，导致程序功能没有正常工作，我只是修复了这些存在的错误，而已。。
+
 ## 启动
 
 * npm run start
