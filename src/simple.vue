@@ -75,7 +75,7 @@
   </div>
 </template>
 <script>
-import { saveObjArr, getObjArr } from '@/utils/localstorage';
+import { saveObjArr, getObjArr, clearLocalStorage } from '@/utils/localstorage';
 import axios, { CancelToken } from 'axios';
 
 var instance = axios.create({});
@@ -504,14 +504,14 @@ export default {
             // 清除storage
             if (res.data.code === 2000) {
               data.status = fileStatus.success;
-              // clearLocalStorage(data.fileHash);
+              clearLocalStorage(data.fileHash);
               // this.$message.success('上传成功');
               // 判断是否所有都成功上传
               this.isAllStatus();
               resolve();
             } else {
               // 文件块数量不对，清除缓存
-              // clearLocalStorage(data.fileHash);
+              clearLocalStorage(data.fileHash);
               data.status = fileStatus.error;
               this.status = Status.wait;
               resolve();

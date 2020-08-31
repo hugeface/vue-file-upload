@@ -62,7 +62,7 @@ export default {
       type: 'video'
     },
     limit: 20,
-    chunkSize: 50 * 1024 * 1024,
+    chunkSize: 1 * 1024 * 1024,
     share: 1 // 是否共享 0私有  1共享
   }),
   computed: {

@@ -29,7 +29,7 @@ const mergeFileChunk = async (filePath, fileHash, size) => {
   const chunkPaths = await fse.readdir(chunkDir);
   // 根据切片下标进行排序
   // 否则直接读取目录的获得的顺序可能会错乱
-  chunkPaths.sort((a, b) => a.split('-')[1] - b.split('-')[1]);
+  chunkPaths.sort((a, b) => a - b);
   await Promise.all(
     chunkPaths.map((chunkPath, index) =>
       pipeStream(
